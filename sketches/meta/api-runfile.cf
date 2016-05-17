@@ -2,8 +2,8 @@
 
 # environment common bundles
 
-# environment 092b04a40fdd4cb8bfdb685f2c4a0328
-bundle common 092b04a40fdd4cb8bfdb685f2c4a0328
+# environment 1b6aaf65758a53826053c5dd3e893e29
+bundle common 1b6aaf65758a53826053c5dd3e893e29
 {
   vars:
       "activated" string => "--'activated' value passed as a class function--";
@@ -11,9 +11,9 @@ bundle common 092b04a40fdd4cb8bfdb685f2c4a0328
       "test" string => "";
       "verbose" string => "";
   classes:
-      "runenv_092b04a40fdd4cb8bfdb685f2c4a0328_activated" and => { classmatch("cfengine_3") };
-      "runenv_092b04a40fdd4cb8bfdb685f2c4a0328_test" expression => "!any";
-      "runenv_092b04a40fdd4cb8bfdb685f2c4a0328_verbose" expression => "!any";
+      "runenv_1b6aaf65758a53826053c5dd3e893e29_activated" and => { classmatch("linux") };
+      "runenv_1b6aaf65758a53826053c5dd3e893e29_test" expression => "!any";
+      "runenv_1b6aaf65758a53826053c5dd3e893e29_verbose" expression => "!any";
 }
 
 
@@ -32,7 +32,7 @@ bundle agent cfsketch_run
 
       # array 'metadata' from definition sketch metadata, activation __ntp_001_Packages_installed_installed
       "__ntp_001_Packages_installed_installed_metadata[activation][identifier]" string => "ntp";
-      "__ntp_001_Packages_installed_installed_metadata[activation][timestamp]" string => "1463504428";
+      "__ntp_001_Packages_installed_installed_metadata[activation][timestamp]" string => "1463507048";
       "__ntp_001_Packages_installed_installed_metadata[api][][type]" string => "bundle_options";
       "__ntp_001_Packages_installed_installed_metadata[api][metadata][type]" string => "metadata";
       "__ntp_001_Packages_installed_installed_metadata[api][pkgs_add][type]" string => "list";
@@ -53,16 +53,16 @@ bundle agent cfsketch_run
       "__ntp_001_Packages_installed_installed_metadata[tags]" slist => { "cfdc", "packages", "enterprise_compatible" };
       "__ntp_001_Packages_installed_installed_metadata[version]" string => "1.0.0";
 
-      # list 'pkgs_add' from definition 8895cd80778139ba06ecb9888a2759d0, activation __ntp_001_Packages_installed_installed
+      # list 'pkgs_add' from definition 06dd04aba86b001309005d546ff32eb1, activation __ntp_001_Packages_installed_installed
       "__ntp_001_Packages_installed_installed_pkgs_add" slist => { "ntp" };
 
   methods:
     any::
       "cfsketch_g" usebundle => "cfsketch_g";
-      "092b04a40fdd4cb8bfdb685f2c4a0328" usebundle => "092b04a40fdd4cb8bfdb685f2c4a0328";
+      "1b6aaf65758a53826053c5dd3e893e29" usebundle => "1b6aaf65758a53826053c5dd3e893e29";
 
-    runenv_092b04a40fdd4cb8bfdb685f2c4a0328_activated::
-      "__ntp_001_Packages_installed_installed" usebundle => cfdc_packages:installed("092b04a40fdd4cb8bfdb685f2c4a0328", "default:cfsketch_run.__ntp_001_Packages_installed_installed_metadata", @(cfsketch_run.__ntp_001_Packages_installed_installed_pkgs_add)), ifvarclass => "(centos|debian|redhat|ubuntu)", useresult => "return___ntp_001_Packages_installed_installed";
+    runenv_1b6aaf65758a53826053c5dd3e893e29_activated::
+      "__ntp_001_Packages_installed_installed" usebundle => cfdc_packages:installed("1b6aaf65758a53826053c5dd3e893e29", "default:cfsketch_run.__ntp_001_Packages_installed_installed_metadata", @(cfsketch_run.__ntp_001_Packages_installed_installed_pkgs_add)), ifvarclass => "(centos|debian|redhat|ubuntu)", useresult => "return___ntp_001_Packages_installed_installed";
 
   reports:
     inform_mode::
