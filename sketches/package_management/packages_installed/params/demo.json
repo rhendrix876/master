@@ -1,7 +1,0 @@
-{
-    "Packages::installed":
-    {
-        pkgs_add: [ "screen" ],
-        pkgs_delete: [ "nosuchpackage" ],
-    }
-}
